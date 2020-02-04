@@ -1,0 +1,5 @@
+#Remove extra white-spaces from the given string.
+def formatString(input):
+    a=input.split()
+    b=" ".join(a)
+    return b
