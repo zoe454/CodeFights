@@ -1,0 +1,5 @@
+#Given a string, find the number of different non-empty substrings in it.
+def differentSubstringsTrie(inputString):
+    sub = [inputString[i: j] for i in range(len(inputString)) for j in range(i + 1, len(inputString) + 1)]
+    unique=len(set(sub))
+    return unique
