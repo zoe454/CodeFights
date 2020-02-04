@@ -1,0 +1,24 @@
+#Consider the following operation - we take a positive integer nand replace it with the sum of its 
+#prime factors (if a prime number is presented multiple times in the factorization of n, then 
+#it's counted the same number of times in the sum). This operation is applied sequentially first to the given number, 
+#then to the first result, then to the second result and so on, until the result remains the same.
+#Given any number, find the final result of the operation.
+def factorSum(num):
+    if num<= 200 and num>=2 and num==int(num):
+        sum = 0
+        i=2
+        a=num
+        while(i * i <= a):
+            while(a % i == 0): 
+                sum += i 
+                a /= i 
+                if i==a:
+                    break
+            i += 1
+        sum += a 
+        if sum==num:
+            return int(sum)
+        else:
+            return factorSum(sum)
+    else:
+        return False
