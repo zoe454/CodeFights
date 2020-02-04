@@ -1,0 +1,19 @@
+#Given array of integers, check if it represents either a strictly increasing or a strictly decreasing sequence.
+
+def isMonotonous(sequence):
+    mono=[]
+    if len(sequence)==1:
+        return True
+    for i in range(len(sequence)-1):
+        if sequence[i]<sequence[i+1]:
+            a=0
+            mono.append(a)
+        elif sequence[i]>sequence[i+1] and sequence[-1] < 0:
+            a=0
+            mono.append(a)
+        else:
+            return False
+    if len(set(mono))==1:
+        return True
+    else :
+        return False
