@@ -1,0 +1,33 @@
+#You are given an n × m matrix, which contains all the integers from 1 to n * m, inclusive, each exactly once.
+
+#Initially you are standing in the cell containing the number 1. On each turn you are allowed to move to an adjacent cell, 
+#i.e. to a cell that shares a common side with the one you are standing on now. It is prohibited to visit any cell more than once.
+
+#Check if it is possible to visit all the cells of the matrix in the order of increasing numbers in the cells, 
+#i.e. get to the cell with the number 2 on the first turn, then move to 3, etc.
+def findPath(matrix):
+    dx=0
+    dy=0
+    m=len(matrix)
+    n=len(matrix[0])
+    val=1
+    start=[[index, row.index(val)] for index, row in enumerate(matrix) if val in row]
+    dx=start[0][0]
+    dy=start[0][1]
+    move = [[0, -1], [0, 1], [-1, 0], [1, 0]]
+    
+    for i in range(1,m*n):
+        cellx=0
+        celly=0
+        success=0
+        for a,b in move:
+            if (0 <= dx+ a< m) and (0 <= dy+b < n):
+                if matrix[dx+ a][dy+b]==i+1:
+                    cellx=dx+ a
+                    celly=dy+ b
+                    success=1
+        if success==1:
+            dx,dy=cellx,celly
+        else:
+            return False
+    return True
