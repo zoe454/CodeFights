@@ -1,0 +1,20 @@
+#A prime number is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers
+
+#For example 2 and 3 are prime numbers
+
+#For n as an integer. Give the result of sum of prime numbers which are not greater than n.
+def primeSum(n):
+    sum=0
+    if n<2:
+        return 0
+    if n==2:
+        return 2
+    if n==3:
+        return 5 
+    for i in range (2,n+1):
+        for j in range (2,i):
+            if i % j == 0:
+                break
+        else:
+            sum+=i
+    return sum
