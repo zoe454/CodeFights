@@ -1,0 +1,12 @@
+#Determine whether the given string can be obtained by one concatenation of some string to itself.
+def isTandemRepeat(inputString):
+    a=len(inputString)
+    if a%2==1:
+        return False
+    m=a/2
+    A=inputString[0:m]
+    B=inputString[m:]
+    if inputString==B+A:
+        return True
+    else:
+        return False
