@@ -1,0 +1,23 @@
+#Consider the following operation on a string containing digits from 0 to 9:
+
+if the leftmost digit of the string is divisible by 3, remove it from the string;
+otherwise, if the rightmost digit of the string is divisible by 3, remove it from the string;
+otherwise, if the sum of two digits on the sides of the string is divisible by 3, remove both digits from the string;
+This operation is applied sequentially until the string is empty or neither of the three given conditions is met.
+
+For a given string find the result of applying the given algorithm to it.
+def truncateString(s):
+    if len(s)==0:
+        return ""
+    n=""
+    a=int(s[0])
+    b=int(s[-1])
+    if a%3==0:
+        n=s[1:]
+    elif b%3==0:
+        n=s[0:-1]
+    elif (a+b)%3==0:
+        n=s[1:-1]
+    else:
+        return s
+    return truncateString(n)
