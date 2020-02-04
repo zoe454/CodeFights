@@ -1,0 +1,16 @@
+#A pangram is a sentence using every letter of a given alphabet at least once
+
+Given a sentence, check whether it is a pangram or not.
+def isPangram(sentence):
+    sum=0
+    p="abcdefghijklmnopqrstuvwxyz"
+    string=sentence.lower()
+    for i in set(string):
+        if i in p:
+            a=string.count(i)
+            p=p.replace(i,"")
+            sum+=a
+    if sum>=26 and len(p)==0:
+        return True
+    else:
+        return False
