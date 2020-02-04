@@ -1,0 +1,21 @@
+#A sequence is called an arithmetic progression if its elements are evenly spaced, i.e. 
+#the difference between any two consecutive elements is the same
+
+#Given a sequence of integers find the length of its largest subsequence that forms an arithmetic progression.
+def longestSequence(a):
+    long = 1
+    for i in range(len(a)):
+        for j in range(i + 1, len(a)):
+            diff = a[j] - a[i]
+            if diff == 0:
+                continue
+            x = 1
+            y = a[i]
+            for k in range(j, len(a)):
+                if a[k] - y == diff:
+                    x += 1
+                    y = a[k]
+            if x > long:
+                long = x
+
+    return long
