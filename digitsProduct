@@ -1,0 +1,19 @@
+#Given an integer product, find the smallest positive interger (i.e. greater than 0) that the product of whose digits is equal to product. 
+#If there is no such integer, return -1 instead.
+def digitsProduct(n):
+    if n==1:
+        return 1
+    if n < 10: 
+        return n+10
+    sum = []
+    for i in range(9,1,-1):
+        while(n % i == 0): 
+            sum.append(i)
+            n /= i 
+    if sum==[]:
+        return -1
+    else:
+        n = sum[len(sum)-1] 
+        for i in range(len(sum)-2,-1,-1): 
+            n = 10 * n + sum[i] 
+        return n 
