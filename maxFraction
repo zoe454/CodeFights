@@ -1,0 +1,15 @@
+#Given a list of fractions, find the index of the largest one (0-based). It is guaranteed that there are no equal fractions in the input.
+def maxFraction(numerators, denominators):
+    a=numerators
+    b=denominators
+    n=a[0]
+    d=b[0]
+    max=0
+    for i in range(1,len(a)):
+        n1=a[i]
+        d1=b[i]
+        if n*d1-d*n1 <0:
+            n=n1
+            d=d1
+            max=i       
+    return max
