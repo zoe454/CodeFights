@@ -1,0 +1,12 @@
+#Given a natural number n. Find the number of zeros at the end of n! (n! is the product of continuous integers from 1 to n)
+
+def numberZeroDigits(n):
+    if n<1:
+        return 0
+    count = 0
+    i=5
+    while (n/i>=1): 
+        count += int(n/i) 
+        i *= 5
+  
+    return int(count) 
