@@ -1,0 +1,9 @@
+#Given a sequence determine if it's an arithmetic progression or not.
+def isArithmeticProgression(sequence):
+    if len(sequence)==1:
+        return True
+    a= sequence[1]-sequence[0]
+    for i in range(len(sequence)-1):
+        if not (sequence[i + 1] - sequence[i] == a):
+                return False
+    return True
