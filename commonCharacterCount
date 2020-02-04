@@ -1,0 +1,12 @@
+#Given two strings, find the number of common characters between them.
+def commonCharacterCount(s1, s2):
+    count=0
+    for i in range(0,len(s1)):
+        if s1[i] in s2:
+            p=s2.index(s1[i])
+            lst=list(s2)
+            del(lst[p])
+            s2 = "".join(lst)
+            count+=1
+    return count
+
