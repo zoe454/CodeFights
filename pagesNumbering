@@ -1,0 +1,13 @@
+#Given a number of the pages in some book find the number of digits needs to print to enumerate the pages of the book.
+
+def pagesNumbering(n):
+    if n<1:
+        return False
+    if n<10:
+        return n
+    l=len(str(n))
+    a=0
+    for i in range(1,l):
+        c=n-(10**i-1)
+        a+=c
+    return n+a
