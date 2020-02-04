@@ -1,0 +1,8 @@
+#Given the center and the radius of a circle and the coordinates of a point determine if the point is inside 
+#(or on the border of) the circle.
+def insideCircle(point, center, radius):
+    distance=((center[0] - point[0]) ** 2 + (center[1] - point[1]) ** 2)**0.5
+    if distance>radius:
+        return False
+    else:
+        return True
