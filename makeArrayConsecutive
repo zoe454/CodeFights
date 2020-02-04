@@ -1,0 +1,9 @@
+#Given an array of integers, we need to fill in the "holes" such that it contains all the integers from some range.
+def makeArrayConsecutive(sequence):
+    ma=max(sequence)
+    mi=min(sequence)
+    lst=[]
+    for i in range(mi,ma+1):
+        if i  not in sequence:
+            lst.append(i)
+    return lst
