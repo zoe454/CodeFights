@@ -1,0 +1,10 @@
+#Given a square's vertices in arbitrary order, find (the length of the square's side)2.
+def findSquareSide(x, y):
+    size = 999999
+    for dx, dy, x, y in zip(x, y, x[1:], y[1:]):
+        square=(x - dx) ** 2 + (y - dy) ** 2
+        if square< size:
+            size=square
+        else:
+            size=size
+    return size
