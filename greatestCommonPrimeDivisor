@@ -1,0 +1,22 @@
+#GCPD (Greatest Common Prime Divisor) is defined as the largest prime number that divides both given positive integers. 
+#Your task is to find GCPD of the given integers a and b.
+def greatestCommonPrimeDivisor(c,d):
+    gcd=0
+    a=int(c)
+    b=int(d)
+    if a > b: 
+        n = b 
+    else: 
+        n = a 
+    for divisor in range(2,n):
+        if a % divisor==0 and b % divisor==0 and divisor>gcd:
+            gcd=divisor
+            a /= divisor
+            b /= divisor
+        elif (a% divisor==0):
+            a /= divisor
+        elif (b% divisor==0):
+            b /= divisor
+    if gcd==0:
+        return -1
+    return gcd             
