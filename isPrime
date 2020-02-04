@@ -1,0 +1,14 @@
+#A prime number (or a prime) is a natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers
+
+#Implement a function that determines if a given positive integer is a prime or not.
+def isPrime(n):
+    if n<2:
+        return False
+    else:
+        for i in range(2,n):
+            if n % i == 0:
+                return False
+                break
+            
+        else:
+            return True
