@@ -1,0 +1,10 @@
+#Given a set of points, find the number of triangles with non-zero areas formed by some trio of the given points.
+def countTriangles(x, y):
+    n = len(x)  
+    count = 0
+    for i in range(n - 2):
+            for j in range(i+1,n - 1):
+                for k in range(j+1,n):
+                    if (x[j]-x[i])*(y[k]-y[j])!=(y[j]-y[i])*(x[k]-x[j]):
+                        count += 1
+    return count
